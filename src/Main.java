@@ -9,6 +9,7 @@ public class Main {
         System.out.println(power(3,2));
         System.out.println(fibonacci(5));
 
+
     }
 
 
@@ -80,5 +81,49 @@ public class Main {
     public static int fibonacci(int n) {
         if (n <= 1) return n;
         return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+
+    /**
+     * Reverse array
+     * Time Complexity: O(n)
+     */
+    public static void reverseArray(int[] arr, int left, int right) {
+        if (left >= right) return;
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        reverseArray(arr, left + 1, right - 1);
+    }
+
+
+    /**
+     * Checks if a string consists only of digits
+     * Time Complexity: O(n)
+     */
+    public static boolean isDigitString(String s, int index) {
+        if (index == s.length()) return true;
+        if (!Character.isDigit(s.charAt(index))) return false;
+        return isDigitString(s, index + 1);
+    }
+
+
+    /**
+     * Computes binomial coefficient
+     * Time Complexity: O(2^n)
+     */
+    public static int binomialCoefficient(int n, int k) {
+        if (k == 0 || k == n) return 1;
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+    }
+
+
+    /**
+     * Computes GCD using the Euclidean algorithm
+     * Time Complexity: O(log min(a, b))
+     */
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
     }
 }
