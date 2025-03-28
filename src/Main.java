@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        //testing problem1
+        //testing
         int[] arr = {3, 1, 4, 1, 5, 9, 2, 6};
         System.out.println(minValue(8,arr));
         System.out.println(avgValue(8,arr));
@@ -9,6 +9,20 @@ public class Main {
         System.out.println(power(3,2));
         System.out.println(fibonacci(5));
 
+
+        // Testing reverseArray
+        reverseArray(arr, 0, arr.length - 1);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+
+        // Testing 6 - 10
+        System.out.println(isDigitString("12345", 0)); // true
+        System.out.println(isDigitString("12a45", 0)); // false
+        System.out.println(binomialCoefficient(5, 2)); // 10
+        System.out.println(gcd(48, 18)); // 6
 
     }
 
