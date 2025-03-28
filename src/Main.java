@@ -35,7 +35,24 @@ public class Main {
     }
 
 
-    public static String problem3(int n) {
-        
+    /**
+     * Checks whether a number is prime using recursion.
+     * Time Complexity: O(√n)
+     */
+    public static boolean isPrime(int n, int divisor) {
+        if (n < 2) return false;
+        if (divisor * divisor > n) return true;
+        if (n % divisor == 0) return false;
+        return isPrime(n, divisor + 1);
+    }
+
+
+    /**
+     * Computes the factorial of a number
+     * Time Complexity: O(n)
+     */
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) return 1;
+        return n * factorial(n - 1);
     }
 }
